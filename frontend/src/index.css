@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-wheat text-soil font-sans antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display text-leaf-dark;
+  }
+}
+
+@layer components {
+  /* Signature element: a mandi (market) price-board tag. Used anywhere a
+     price appears — dashboard stats, product cards, chart tooltips — so
+     price is visually distinct from everything else on the page. */
+  .price-tag {
+    @apply inline-flex items-baseline gap-1 rounded-sm bg-turmeric/10
+      border border-turmeric/40 px-2 py-1 font-mono text-soil
+      -rotate-1;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-leaf
+      px-4 py-2 text-sm font-medium text-wheat transition-colors
+      hover:bg-leaf-dark focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-leaf-dark
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md border
+      border-leaf/30 bg-transparent px-4 py-2 text-sm font-medium
+      text-leaf-dark transition-colors hover:bg-leaf/10
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-leaf-dark;
+  }
+
+  .card {
+    @apply rounded-lg border border-soil/10 bg-white/60 p-5 shadow-sm;
+  }
+}
