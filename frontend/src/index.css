@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Earthy Beige & Forest Green Organic Palette */
+    --color-beige-bg: #FAF7F2;
+    --color-beige-card: #FFFFFF;
+    --color-beige-subtle: #F2ECE1;
+    --color-beige-border: #E5DCCF;
+    --color-beige-hover: #EBE3D5;
+
+    --color-forest-dark: #1E3D27;
+    --color-forest-primary: #2D5A38;
+    --color-forest-light: #447B52;
+    --color-moss-subtle: #E8F0E9;
+    --color-warm-earth: #8C6D46;
+
+    --color-text-main: #232921;
+    --color-text-muted: #6B7264;
+    --color-text-light: #8E9687;
+
+    /* Custom easing curves from Emil Kowalski */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-beige-bg);
+    color: var(--color-text-main);
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Micro-interaction & tactile press feedback */
+button, [role="button"], a.btn {
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+}
+
+button:active:not(:disabled), [role="button"]:active:not(:disabled), a.btn:active {
+  transform: scale(0.975);
+}
+
+/* Clean Organic Card & Paper Shadows (Authentic, not glossy AI glow) */
+.craft-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5DCCF;
+  box-shadow: 0 1px 3px 0 rgba(45, 51, 40, 0.04), 0 1px 2px -1px rgba(45, 51, 40, 0.04);
+}
+
+.craft-card-hover {
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.craft-card-hover:hover {
+  border-color: #C2D6C6;
+  box-shadow: 0 8px 20px -4px rgba(45, 90, 56, 0.08), 0 4px 6px -2px rgba(45, 90, 56, 0.04);
+}
+
+/* Custom scrollbar matching organic beige */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CEBE;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BAAC98;
+}
